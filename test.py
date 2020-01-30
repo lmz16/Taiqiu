@@ -11,13 +11,14 @@ import config
 import display
 import init
 import variable
+import game
 
 from pygame.locals import *
 
 pygame.init()
+variable.game = game.Game() 
 variable.screen = init.screen_init()
-
-background = pygame.image.load(config.qiuzhuo_path)
+variable.background = pygame.image.load(config.qiuzhuo_path)
 
 while True:
   for event in pygame.event.get():
@@ -25,5 +26,4 @@ while True:
       pygame.quit()
       exit()
             
-  variable.screen.blit(background, (0, 0))
-  pygame.display.update()
+  display.update()
