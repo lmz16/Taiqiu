@@ -52,3 +52,6 @@ class ball(pygame.sprite.Sprite):
     
     self.rect.x = loc[0]
     self.rect.y = loc[1]
+    
+  
+  

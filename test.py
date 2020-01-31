@@ -11,13 +11,13 @@ import config
 import display
 import init
 import variable
-import game
 
 from pygame.locals import *
 
 pygame.init()
 init.screen_init()
 init.game_init()
+fcclock = pygame.time.Clock()
 
 while True:
   for event in pygame.event.get():
@@ -26,6 +26,11 @@ while True:
       exit()
     if event.type == pygame.MOUSEBUTTONDOWN:
       variable.game.refresh()
-      
+    if event.type == pygame.KEYDOWN:
+      if event.key == K_ESCAPE:
+        pygame.quit()
+        exit()
+  print(fcclock.get_rawtime()) #循环运行时长
+  fcclock.tick(config.fps)
   variable.game.update()
   display.update()

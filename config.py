@@ -16,3 +16,6 @@ is_friction = True
 miu = 0
 
 speed_thershold = 0.1
+
+fps = 20
+accelerate = 5
